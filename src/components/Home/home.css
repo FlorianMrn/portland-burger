@@ -1,0 +1,50 @@
+main#homeMain {
+    max-width: 1000px;
+    margin: auto;
+    padding: 32px;
+    text-align: center;
+}
+
+main#homeMain > h1 {
+    color: #54B589;
+    padding: 32px 0;
+}
+
+.themeTitle {
+    color: black;
+    padding: 24px 0;
+    text-align: left;
+}
+
+article {
+    width: 100%;
+}
+
+div.containerData {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 640px) {
+    div.containerData {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+  }
