@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { datasApi } from "../../assets/datas";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -48,8 +48,6 @@ const Panier = (props: PanierProps) => {
     navigate(-1);
   };
 
-  console.log("allo", Object.values(datas)[0]);
-
   return (
     <section id="panier">
       <h1>Récapitulatif de votre commande</h1>
@@ -87,11 +85,11 @@ const Panier = (props: PanierProps) => {
         <button onClick={handleBack} id="back">
           Retour
         </button>
-        {datas.length > 0 && 
+        {datas.length > 0 && (
           <button id="pay">
             <Link to="/checkout">Payer</Link>
           </button>
-        }
+        )}
       </div>
     </section>
   );

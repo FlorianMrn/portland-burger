@@ -55,8 +55,6 @@ const Nav = ({ setter, cart }: cartProps) => {
     totalSetter();
   }, [cart]);
 
-  console.log("wesh", cart);
-
   const MyTabs = () => {
     return (
       <div className="itemsContainer">
