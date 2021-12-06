@@ -4,7 +4,12 @@ import Card from '../Card';
 import './home.css';
 import { datasApi } from '../../assets/datas';
 
-const Home: FC = (props:any) => {
+type HomeProps = {
+    setter: any;
+    cart: any;
+}
+
+const Home = (props:HomeProps) => {
 
     interface datasObject {
         burgers: Array<object>,
