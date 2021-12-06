@@ -1,5 +1,4 @@
-import React from "react";
-import { FC, useState } from "react";
+import React, { FC, useState, Suspense } from "react";
 import { Routes, Route  } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
@@ -31,11 +30,13 @@ const App: FC = () => {
   return (
     <div className="App">
       <Nav {...cartProps} />
-      <Routes>
-        <Route path="/" element={<Home {...cartProps} />} />
-        <Route path="/panier" element={<Panier {...totalProps} />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
+      <Suspense fallback={<div>Chargement..</div>}>
+        <Routes>
+          <Route path="/" element={<Home {...cartProps} />} />
+          <Route path="/panier" element={<Panier {...totalProps} />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
