@@ -1,0 +1,22 @@
+section.payment {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section.payment form {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+section.payment label {
+    display: block;
+}
+
+section.payment div {
+    width: 100%;
+    max-width: 300px;
+}
