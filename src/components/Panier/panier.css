@@ -1,0 +1,85 @@
+section#panier {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+section#panier h1 {
+    color: #54B589;
+    text-align: center;
+    font-size: 2rem;
+    padding: 64px 0;
+}
+
+#advise {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #54B589;
+    color: white;
+}
+
+tfoot td {
+    border: 0;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 32px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+.checkout {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 48px auto;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.checkout a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.checkout button {
+    font-weight: 700;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+    border: 0;
+    margin-left: 16px;
+    font-size: 1.2rem;
+    min-width:80px;
+}
+
+#back {
+    background-color: #878E95;
+}
+
+#pay {
+    background-color: #54B589;
+}
+

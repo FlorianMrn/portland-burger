@@ -3,10 +3,13 @@ import { FC, useState } from 'react';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Panier from './components/Panier';
+import Checkout from './components/Checkout';
 import {
   Routes,
-  Route
+  Route,
+  RouterProps
 } from "react-router-dom";
+
 
 const App: FC = () => {
 
@@ -21,8 +24,10 @@ const App: FC = () => {
   };
 
   const handleDelete = (id: number) => {
-    const newCart = cart.filter(el => el.id !== id);
-    setCart(newCart); 
+
+    setCart(prevState => (
+      prevState.filter(el => el !== id)
+    ))
   }
 
   const cartProps = {
@@ -41,6 +46,7 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Home {...cartProps}/>} />
         <Route path="/panier" element={<Panier {...totalProps} />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );

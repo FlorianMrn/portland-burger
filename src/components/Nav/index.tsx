@@ -14,7 +14,14 @@ interface datasObject {
   burgers: Array<object>;
   sides: Array<object>;
   boissons: Array<object>;
-  filter: any;
+}
+
+interface elementData {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  img: any;
 }
 
 const Nav = ({ setter, cart }: cartProps) => {
@@ -23,27 +30,23 @@ const Nav = ({ setter, cart }: cartProps) => {
   useEffect(() => {
     const totalSetter = async () => {
       const datas: datasObject = datasApi;
+      const burgers: Array<object> = datas.burgers;
+      const sides: Array<object> = datas.sides;
+      const boissons: Array<object> = datas.boissons;
       let result: number = 0;
 
-      cart.map((el: number, index) => {
-        console.log(datas.sides.find((d) => d.id === el) === undefined);
+      cart.map((el, index) => {
+        function findElement(elem: any) {
+          if (elem.id === el) {
+            return (result += elem.price);
+          }
 
-        let burgerPrice: number =
-          datas.burgers.find((d) => d.id === el) === undefined
-            ? 0
-            : datas.burgers.find((d) => d.id === el).price;
-        let sidesPrice: number =
-          datas.sides.find((d) => d.id === el) === undefined
-            ? 0
-            : datas.sides.find((d) => d.id === el).price;
-        let boissonsPrice: number =
-          datas.boissons.find((d) => d.id === el) === undefined
-            ? 0
-            : datas.boissons.find((d) => d.id === el).price;
+          return 0;
+        }
 
-        let totalPrice: number = burgerPrice + sidesPrice + boissonsPrice;
-
-        return (result += totalPrice);
+        burgers.find(findElement);
+        sides.find(findElement);
+        boissons.find(findElement);
       });
 
       setTotal(result);
